@@ -6,7 +6,7 @@ pipeline {
       NAME = "solar-system"
       VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
       IMAGE_REPO = "orpheadya"
-      ARGO_TOKEN = credentials('argo-token')
+      //ARGO_TOKEN = credentials('argo-token')
       GITHUB_TOKEN = credentials('github-token')
       NEW_IMAGE_NAME = ''
       GIT_REPO_NAME = "gitops-argocd"
