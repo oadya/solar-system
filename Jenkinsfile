@@ -71,7 +71,7 @@ pipeline {
                 script {
                     // Determine the image name dynamically based on your versioning strategy
                     NEW_IMAGE_NAME = "${IMAGE_REPO}/${NAME}:${VERSION}"
-                    dir('gitops-argocd/jenjins-demo') {
+                    dir('gitops-argocd/jenkins-demo') {
                         sh "sed -i 's|image: .*|image: $NEW_IMAGE_NAME|' deployment.yml"
                         sh 'cat tdeployment.yml'
                     }
@@ -83,7 +83,7 @@ pipeline {
 
         stage('Commit & Push') {
             steps {
-                dir('gitops-argocd/jenjins-demo') {
+                dir('gitops-argocd/jenkins-demo') {
                     sh "git remote set-url origin https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}"
                     sh 'git checkout feature-gitea'
                     sh 'git add -A'
