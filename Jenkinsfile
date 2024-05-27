@@ -72,8 +72,8 @@ pipeline {
                     // Determine the image name dynamically based on your versioning strategy
                     NEW_IMAGE_NAME = "${IMAGE_REPO}/${NAME}:${VERSION}"
                     dir('gitops-argocd/jenkins-demo') {
-                        sh "sed -i 's|image: .*|image: $NEW_IMAGE_NAME|' deployment.yml"
-                        sh 'cat tdeployment.yml'
+                        sh "sed -i 's|image: .*|image: $NEW_IMAGE_NAME|' deployment.yaml"
+                        sh 'cat deployment.yaml'
                     }
               }
               
