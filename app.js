@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 app.use(cors())
 
-mongoose.connect(process.env.MONGO_URI, {
+//mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb+srv://supercluster.d83jj.mongodb.net/superData', {
     //user: process.env.MONGO_USERNAME,
     //pass: process.env.MONGO_PASSWORD,
     user: 'superuser',
